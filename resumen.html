@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Confirmaciones - Andrés Sebastián</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #eef7ff;
+      color: #173f73;
+    }
+
+    .encabezado {
+      background: linear-gradient(135deg, #1597e5, #51c4ff);
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+      border-radius: 0 0 25px 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    .encabezado h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .encabezado p {
+      margin: 8px 0 0;
+      font-size: 17px;
+    }
+
+    .contenedor {
+      width: 100%;
+      max-width: 950px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .estado {
+      text-align: center;
+      margin: 15px 0;
+      font-weight: bold;
+      color: #555;
+    }
+
+    /* ==============================
+       TARJETAS DEL RESUMEN
+    ============================== */
+
+    .tarjetas {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 25px;
+    }
+
+    .tarjeta {
+      background: white;
+      border-radius: 18px;
+      padding: 20px 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    }
+
+    .numero {
+      display: block;
+      font-size: 32px;
+      font-weight: bold;
+      color: #1597e5;
+      margin-bottom: 6px;
+    }
+
+    .texto {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* ==============================
+       SECCIÓN FAMILIAS
+    ============================== */
+
+    .seccion {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    }
+
+    .seccion h2 {
+      text-align: center;
+      margin-top: 0;
+      color: #173f73;
+      font-size: 25px;
+    }
+
+    .familia {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+
+      background: #f3f9ff;
+
+      border-left: 5px solid #1597e5;
+
+      border-radius: 14px;
+
+      padding: 15px;
+
+      margin-bottom: 10px;
+    }
+
+    .familia-nombre {
+      font-size: 17px;
+      font-weight: bold;
+      color: #173f73;
+    }
+
+    .familia-datos {
+      color: #555;
+      font-size: 14px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .vacio {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+    }
+
+    .error {
+      background: #ffe6e6;
+      color: #b00020;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .pie {
+      text-align: center;
+      margin: 25px 0;
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* ==============================
+       CELULAR
+    ============================== */
+
+    @media (max-width: 700px) {
+
+      .contenedor {
+        padding: 12px;
+      }
+
+      .encabezado h1 {
+        font-size: 27px;
+      }
+
+      .encabezado p {
+        font-size: 15px;
+      }
+
+      .tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .tarjeta {
+        padding: 16px 8px;
+      }
+
+      .numero {
+        font-size: 27px;
+      }
+
+      .texto {
+        font-size: 13px;
+      }
+
+      .familia {
+        display: block;
+      }
+
+      .familia-datos {
+        text-align: left;
+        margin-top: 7px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ==============================
+       ENCABEZADO
+  ============================== -->
+
+  <header class="encabezado">
+
+    <h1>🎉 Confirmaciones</h1>
+
+    <p>
+      Cumpleaños de Andrés Sebastián
+    </p>
+
+  </header>
+
+
+  <main class="contenedor">
+
+
+    <!-- ESTADO -->
+
+    <div id="estado"
+         class="estado">
+
+      Cargando confirmaciones...
+
+    </div>
+
+
+    <!-- ==============================
+         RESUMEN
+    ============================== -->
+
+    <section class="tarjetas">
+
+
+      <div class="tarjeta">
+
+        <span
+          class="numero"
+          id="familias">
+
+          0
+
+        </span>
+
+        <span class="texto">
+
+          👨‍👩‍👧‍👦 Familias confirmadas
+
+        </span>
+
+      </div>
+
+
+      <div class="tarjeta">
+
+        <span
+          class="numero"
+          id="personas">
+
+          0
+
+        </span>
+
+        <span class="texto">
+
+          👥 Personas
+
+        </span>
+
+      </div>
+
+
+      <div class="tarjeta">
+
+        <span
+          class="numero"
+          id="ninos">
+
+          0
+
+        </span>
+
+        <span class="texto">
+
+          👶 Niños
+
+        </span>
+
+      </div>
+
+
+      <div class="tarjeta">
+
+        <span
+          class="numero"
+          id="adultos">
+
+          0
+
+        </span>
+
+        <span class="texto">
+
+          👨‍👩‍👧 Adultos
+
+        </span>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ==============================
+         LISTA DE FAMILIAS
+    ============================== -->
+
+    <section class="seccion">
+
+      <h2>
+        👨‍👩‍👧‍👦 Familias
+      </h2>
+
+      <div id="lista">
+
+        Cargando...
+
+      </div>
+
+    </section>
+
+
+    <div class="pie">
+
+      Invitación de Andrés Sebastián 🎂🎉
+
+    </div>
+
+
+  </main>
+
+
+  <!-- ==============================
+       JAVASCRIPT
+  ============================== -->
+
+  <script>
+
+
+    // ==========================================
+    // URL NUEVA DE GOOGLE APPS SCRIPT
+    // ==========================================
+
+    var API =
+      "https://script.google.com/macros/s/AKfycbw8hxjFLyIX9j1C5aXWERwX-TtVhPBNJoR2kG_4oplgLezfzd8SqU3n3-QL5hjtmUIIAA/exec";
+
+
+    // ==========================================
+    // CLAVE
+    // ==========================================
+
+    var CLAVE = "1234";
+
+
+    // ==========================================
+    // MOSTRAR LOS DATOS
+    // ==========================================
+
+    function recibirDatos(datos) {
+
+
+      var estado =
+        document.getElementById("estado");
+
+
+      var lista =
+        document.getElementById("lista");
+
+
+      // ========================================
+      // COMPROBAR RESPUESTA
+      // ========================================
+
+      if (!datos || datos.ok !== true) {
+
+
+        estado.textContent =
+          "";
+
+
+        lista.innerHTML =
+          '<div class="error">' +
+          'No se pudieron cargar las confirmaciones.' +
+          '</div>';
+
+
+        return;
+
+      }
+
+
+      // ========================================
+      // MOSTRAR RESUMEN
+      // ========================================
+
+      document.getElementById("familias").textContent =
+        datos.resumen.familias;
+
+
+      document.getElementById("personas").textContent =
+        datos.resumen.personas;
+
+
+      document.getElementById("ninos").textContent =
+        datos.resumen.ninos;
+
+
+      document.getElementById("adultos").textContent =
+        datos.resumen.adultos;
+
+
+      // ========================================
+      // LIMPIAR LISTA
+      // ========================================
+
+      lista.innerHTML = "";
+
+
+      // ========================================
+      // SI NO HAY FAMILIAS
+      // ========================================
+
+      if (
+        !datos.familias ||
+        datos.familias.length === 0
+      ) {
+
+
+        lista.innerHTML =
+          '<div class="vacio">' +
+          'Todavía no hay familias confirmadas.' +
+          '</div>';
+
+
+        estado.textContent =
+          "Sin confirmaciones todavía";
+
+
+        return;
+
+      }
+
+
+      // ========================================
+      // MOSTRAR TODAS LAS FAMILIAS
+      // ========================================
+
+      datos.familias.forEach(
+        function(familia) {
+
+
+          var tarjeta =
+            document.createElement("div");
+
+
+          tarjeta.className =
+            "familia";
+
+
+          // NOMBRE
+
+          var nombre =
+            document.createElement("div");
+
+
+          nombre.className =
+            "familia-nombre";
+
+
+          nombre.textContent =
+            "👤 " + familia.nombre;
+
+
+          // DATOS
+
+          var informacion =
+            document.createElement("div");
+
+
+          informacion.className =
+            "familia-datos";
+
+
+          informacion.textContent =
+            familia.ninos +
+            " niños · " +
+            familia.adultos +
+            " adultos";
+
+
+          // AGREGAR ELEMENTOS
+
+          tarjeta.appendChild(nombre);
+
+          tarjeta.appendChild(informacion);
+
+          lista.appendChild(tarjeta);
+
+
+        }
+      );
+
+
+      // ========================================
+      // MENSAJE FINAL
+      // ========================================
+
+      estado.textContent =
+        "✅ Confirmaciones actualizadas";
+
+
+    }
+
+
+    // ==========================================
+    // CARGAR DATOS DESDE GOOGLE
+    // ==========================================
+
+    function cargarConfirmaciones() {
+
+
+      var script =
+        document.createElement("script");
+
+
+      var callback =
+        "recibirDatos";
+
+
+      script.src =
+        API +
+        "?clave=" +
+        encodeURIComponent(CLAVE) +
+        "&callback=" +
+        callback;
+
+
+      // ========================================
+      // ERROR DE CONEXIÓN
+      // ========================================
+
+      script.onerror =
+        function() {
+
+
+          document.getElementById(
+            "estado"
+          ).textContent = "";
+
+
+          document.getElementById(
+            "lista"
+          ).innerHTML =
+
+            '<div class="error">' +
+            'No se pudo conectar con Google Sheets.' +
+            '</div>';
+
+
+        };
+
+
+      document.body.appendChild(script);
+
+
+    }
+
+
+    // ==========================================
+    // INICIAR
+    // ==========================================
+
+    cargarConfirmaciones();
+
+
+  </script>
+
+
+</body>
+
+</html>
