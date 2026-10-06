@@ -1,4 +1,5 @@
 /* ===== COLORES ===== */
+
 :root {
   --cielo: #3f8fd2;
   --azul: #1f56b8;
@@ -11,7 +12,9 @@
   --nube: rgba(255, 248, 231, 0.92);
 }
 
+
 /* ===== BASE ===== */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -28,36 +31,112 @@ body {
   font-weight: 600;
   color: var(--cafe);
   text-align: center;
-  background: linear-gradient(#3496ea, #40a4f1 45%, #69c3fb);
+
+  background: linear-gradient(
+    #3496ea,
+    #40a4f1 45%,
+    #69c3fb
+  );
+
   background-color: #3496ea;
-  padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+
+  padding:
+    env(safe-area-inset-top, 0px)
+    0
+    env(safe-area-inset-bottom, 0px);
+
   min-height: 100vh;
 }
 
+
 /* ===== NUBES DEL FONDO ===== */
+
 body::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   pointer-events: none;
+
   background-size: 560px 720px;
+
   background-image:
-    radial-gradient(circle 34px at 120px 100px, var(--nube) 96%, transparent),
-    radial-gradient(circle 48px at 165px 78px, var(--nube) 96%, transparent),
-    radial-gradient(circle 34px at 212px 100px, var(--nube) 96%, transparent),
-    radial-gradient(ellipse 100px 22px at 165px 112px, var(--nube) 96%, transparent),
 
-    radial-gradient(circle 26px at 410px 340px, var(--nube) 96%, transparent),
-    radial-gradient(circle 38px at 448px 322px, var(--nube) 96%, transparent),
-    radial-gradient(circle 26px at 488px 340px, var(--nube) 96%, transparent),
-    radial-gradient(ellipse 80px 18px at 448px 350px, var(--nube) 96%, transparent),
+    radial-gradient(
+      circle 34px at 120px 100px,
+      var(--nube) 96%,
+      transparent
+    ),
 
-    radial-gradient(circle 20px at 90px 580px, var(--nube) 96%, transparent),
-    radial-gradient(circle 30px at 122px 566px, var(--nube) 96%, transparent),
-    radial-gradient(circle 20px at 156px 580px, var(--nube) 96%, transparent),
-    radial-gradient(ellipse 66px 14px at 122px 588px, var(--nube) 96%, transparent);
+    radial-gradient(
+      circle 48px at 165px 78px,
+      var(--nube) 96%,
+      transparent
+    ),
+
+    radial-gradient(
+      circle 34px at 212px 100px,
+      var(--nube) 96%,
+      transparent
+    ),
+
+    radial-gradient(
+      ellipse 100px 22px at 165px 112px,
+      var(--nube) 96%,
+      transparent
+    ),
+
+    radial-gradient(
+      circle 26px at 410px 340px,
+      var(--nube) 96%,
+      transparent
+    ),
+
+    radial-gradient(
+      circle 38px at 448px 322px,
+      var(--nube) 96%,
+      transparent
+    ),
+
+    radial-gradient(
+      circle 26px at 488px 340px,
+      var(--nube) 96%,
+      transparent
+    ),
+
+    radial-gradient(
+      ellipse 80px 18px at 448px 350px,
+      var(--nube) 96%,
+      transparent
+    ),
+
+    radial-gradient(
+      circle 20px at 90px 580px,
+      var(--nube) 96%,
+      transparent
+    ),
+
+    radial-gradient(
+      circle 30px at 122px 566px,
+      var(--nube) 96%,
+      transparent
+    ),
+
+    radial-gradient(
+      circle 20px at 156px 580px,
+      var(--nube) 96%,
+      transparent
+    ),
+
+    radial-gradient(
+      ellipse 66px 14px at 122px 588px,
+      var(--nube) 96%,
+      transparent
+    );
 }
+
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
 
 main {
   max-width: 520px;
@@ -65,12 +144,21 @@ main {
   padding: 28px 18px 40px;
 }
 
+
+/* ===== FUENTES ===== */
+
 h1,
 h2,
 .age {
-  font-family: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
+  font-family:
+    "Lilita One",
+    "Arial Rounded MT Bold",
+    system-ui,
+    sans-serif;
+
   font-weight: 400;
 }
+
 
 /* ===== ENCABEZADO ===== */
 
@@ -78,351 +166,670 @@ h2,
   color: var(--azul-oscuro);
   font-weight: 800;
   font-size: 1.05rem;
+
   -webkit-text-stroke: 0.7px #fff;
   paint-order: stroke fill;
-  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.85);
+
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.85);
 }
+
 
 h1 {
   color: var(--azul-oscuro);
   font-size: 3.1rem;
   line-height: 1;
+
   margin: 6px 0 12px;
 
   -webkit-text-stroke: 3px #fff;
   paint-order: stroke fill;
 
-  text-shadow: 0 5px 0 #0d2d55;
+  text-shadow:
+    0 5px 0 #0d2d55;
 }
+
 
 .age {
   display: inline-block;
+
   background: var(--amarillo);
   color: var(--cafe);
+
   font-size: 1.5rem;
+
   padding: 6px 22px;
+
   border-radius: 40px;
+
   border: 4px solid #fff;
+
   transform: rotate(-3deg);
-  box-shadow: 0 5px 0 var(--azul);
+
+  box-shadow:
+    0 5px 0 var(--azul);
 }
+
 
 /* ===== IMÁGENES PRINCIPALES ===== */
 
 .grupo {
   display: block;
+
   width: 100%;
+
   margin: 26px 0 0;
+
   border: 6px solid #fff;
+
   border-radius: 26px;
-  box-shadow: 0 8px 0 var(--azul);
+
+  box-shadow:
+    0 8px 0 var(--azul);
+
   transform: rotate(1deg);
 }
 
+
 .cumple {
   position: relative;
+
   width: 190px;
   height: 190px;
+
   margin: 34px auto 0;
+
   border-radius: 50%;
+
   border: 6px solid var(--amarillo);
+
   background: #fff;
-  box-shadow: 0 6px 0 var(--azul);
+
+  box-shadow:
+    0 6px 0 var(--azul);
+
   overflow: hidden;
 }
 
+
 .cumple img {
   position: absolute;
+
   inset: 0;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   object-position: center;
 }
+
 
 /* ===== TEXTOS ===== */
 
 .intro {
   color: var(--azul-oscuro);
+
   font-weight: 800;
+
   font-size: 1.05rem;
+
   line-height: 1.35;
+
   margin: 18px 8px 0;
 
   -webkit-text-stroke: 0.6px #fff;
   paint-order: stroke fill;
 
-  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.85);
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.85);
 }
 
+
 .lead {
-  font-family: "Lilita One", system-ui, sans-serif;
+  font-family:
+    "Lilita One",
+    system-ui,
+    sans-serif;
+
   color: var(--azul-oscuro);
+
   font-size: 1.45rem;
+
   line-height: 1.2;
+
   margin: 24px 8px 52px;
 
   -webkit-text-stroke: 0.8px #fff;
   paint-order: stroke fill;
 
-  text-shadow: 0 3px 0 #0d2d55;
+  text-shadow:
+    0 3px 0 #0d2d55;
 }
 
-/* ===== TARJETAS (CUÁNDO / DÓNDE) ===== */
+
+/* ===== TARJETAS CUÁNDO / DÓNDE ===== */
 
 .panel {
   position: relative;
+
   background: var(--crema);
+
   border: 4px solid var(--amarillo);
+
   border-radius: 24px;
-  box-shadow: 0 7px 0 var(--azul);
+
+  box-shadow:
+    0 7px 0 var(--azul);
+
   padding: 36px 20px 22px;
+
   margin: 0 0 56px;
+
   text-align: left;
+
   display: flex;
+
   gap: 14px;
 }
 
+
 .ico {
   font-size: 2rem;
+
   line-height: 1;
 }
 
+
 .txt b {
   display: block;
-  font-family: "Lilita One", system-ui, sans-serif;
+
+  font-family:
+    "Lilita One",
+    system-ui,
+    sans-serif;
+
   font-weight: 400;
+
   font-size: 1.25rem;
+
   color: var(--rojo);
 }
 
+
 .txt .big {
   display: block;
+
   font-size: 1.35rem;
+
   font-weight: 800;
 }
+
 
 .txt .hr {
   display: block;
+
   font-size: 1.15rem;
+
   font-weight: 800;
+
   color: var(--azul);
 }
 
+
 .txt .event-text {
   display: block;
+
   margin-top: 6px;
+
   font-size: 1rem;
 }
 
+
 .txt .show {
   display: inline-block;
+
   margin-top: 10px;
+
   background: var(--rojo);
+
   color: #fff;
+
   font-weight: 800;
+
   padding: 6px 16px;
+
   border-radius: 30px;
 }
 
+
 .map {
   display: inline-block;
+
   margin-top: 10px;
+
   background: var(--azul);
+
   color: #fff;
+
   text-decoration: none;
+
   font-weight: 800;
+
   padding: 9px 18px;
+
   border-radius: 30px;
 }
+
 
 /* ===== CÍRCULOS DE PERSONAJES ===== */
 
 .chapa {
   position: absolute;
+
   width: 84px;
   height: 84px;
+
   border-radius: 50%;
+
   border: 5px solid #fff;
-  box-shadow: 0 4px 0 var(--azul);
+
+  box-shadow:
+    0 4px 0 var(--azul);
+
   background-size: cover;
+
   background-position: center;
 }
+
 
 .rex {
   top: -38px;
   right: 14px;
+
   background-image: url(rex.jpg);
 }
+
 
 .slinky {
   top: -38px;
   right: 14px;
+
   background-image: url(slinky.jpg);
 }
+
 
 .potato {
   width: 132px;
   height: 92px;
+
   border-radius: 46px;
+
   top: -34px;
   left: 50%;
+
   margin-left: -66px;
+
   background-image: url(papa.jpg);
 }
 
+
+/* ===== ALIENÍGENAS ===== */
+
 .aliens {
   height: 150px;
+
   margin: 0 0 56px;
+
   border: 5px solid #fff;
+
   border-radius: 60px;
-  box-shadow: 0 6px 0 var(--azul);
-  background: url(aliens.jpg) center 12% / cover;
+
+  box-shadow:
+    0 6px 0 var(--azul);
+
+  background:
+    url(aliens.jpg)
+    center 12% / cover;
 }
+
 
 /* ===== AVISO DE CALCETAS ===== */
 
 .socks {
   background: var(--crema);
+
   border: 4px solid var(--amarillo);
+
   border-radius: 24px;
-  box-shadow: 0 7px 0 var(--azul);
+
+  box-shadow:
+    0 7px 0 var(--azul);
+
   padding: 18px 20px;
+
   margin: 0 0 56px;
+
   font-size: 1.1rem;
+
   line-height: 1.4;
 }
 
+
 .socks strong {
   display: block;
-  font-family: "Lilita One", system-ui, sans-serif;
+
+  font-family:
+    "Lilita One",
+    system-ui,
+    sans-serif;
+
   font-weight: 400;
+
   font-size: 1.25rem;
+
   color: var(--rojo);
 }
 
+
 .socks span {
   display: block;
+
   margin-top: 4px;
+
   font-weight: 800;
+
   color: var(--azul);
 }
+
+
+/* ===== AVISO DE REGALO ===== */
+
+.regalo {
+  background: var(--crema);
+
+  border: 4px solid var(--amarillo);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 7px 0 var(--azul);
+
+  padding: 18px 20px;
+
+  margin: 0 0 56px;
+
+  font-size: 1.1rem;
+
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+
+.regalo strong {
+  display: block;
+
+  font-family:
+    "Lilita One",
+    system-ui,
+    sans-serif;
+
+  font-weight: 400;
+
+  font-size: 1.25rem;
+
+  color: var(--rojo);
+}
+
 
 /* ===== CONFIRMAR ASISTENCIA ===== */
 
 .rsvp {
   display: block;
+
   text-align: center;
+
   padding-top: 62px;
 }
 
+
 .rsvp h2 {
   font-size: 1.7rem;
+
   color: var(--azul);
 }
+
 
 .sub {
   margin: 4px 0 16px;
 }
 
+
 .name {
   width: 100%;
+
   font: inherit;
+
   font-weight: 800;
+
   padding: 13px 16px;
+
   border: 3px solid var(--azul);
+
   border-radius: 16px;
+
   background: #fff;
+
   color: var(--cafe);
 }
 
+
+/* ===== CONTADORES ===== */
+
 .cnt {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   margin-top: 14px;
+
   font-weight: 800;
+
   font-size: 1.1rem;
 }
 
+
 .step {
   display: flex;
+
   align-items: center;
+
   gap: 16px;
 }
+
 
 .step button {
   width: 44px;
   height: 44px;
+
   border-radius: 50%;
+
   border: 3px solid var(--azul);
+
   background: #fff;
+
   color: var(--azul);
-  font: 800 1.4rem/1 "Nunito", sans-serif;
+
+  font:
+    800 1.4rem/1
+    "Nunito",
+    sans-serif;
+
   cursor: pointer;
 }
+
 
 .step output {
   min-width: 26px;
+
   font-size: 1.3rem;
 }
 
+
+/* ===== TOTAL ===== */
+
 .total {
   margin: 16px 0 14px;
+
   font-weight: 800;
 }
+
+
+/* ===== BOTÓN ENVIAR ===== */
 
 .go {
   width: 100%;
-  font: 400 1.35rem "Lilita One", system-ui, sans-serif;
+
+  font:
+    400 1.35rem
+    "Lilita One",
+    system-ui,
+    sans-serif;
+
   color: #fff;
+
   background: var(--rojo);
+
   border: 0;
+
   border-radius: 40px;
+
   padding: 14px;
-  box-shadow: 0 5px 0 #8f1717;
+
+  box-shadow:
+    0 5px 0 #8f1717;
+
   cursor: pointer;
 }
 
+
 .go:disabled {
   opacity: 0.6;
+
   cursor: default;
 }
 
+
+/* ===== MENSAJE ===== */
+
 .msg {
   min-height: 1.4em;
+
   margin-top: 12px;
+
   font-weight: 800;
+
   color: var(--azul);
 }
+
+
+/* ===== ACCESIBILIDAD ===== */
 
 .step button:focus-visible,
 .go:focus-visible,
 .name:focus-visible,
 .map:focus-visible {
   outline: 3px solid var(--rojo);
+
   outline-offset: 3px;
 }
+
 
 /* ===== CIERRE ===== */
 
 .cierre {
   display: block;
+
   width: 100%;
+
   border: 6px solid #fff;
+
   border-radius: 26px;
-  box-shadow: 0 8px 0 var(--azul);
+
+  box-shadow:
+    0 8px 0 var(--azul);
+
   transform: rotate(-1deg);
 }
 
+
 .fin {
-  font-family: "Lilita One", system-ui, sans-serif;
+  font-family:
+    "Lilita One",
+    system-ui,
+    sans-serif;
+
   color: var(--azul-oscuro);
+
   font-size: 1.3rem;
+
   margin-top: 22px;
 
   -webkit-text-stroke: 0.8px #fff;
   paint-order: stroke fill;
 
-  text-shadow: 0 3px 0 #0d2d55;
+  text-shadow:
+    0 3px 0 #0d2d55;
+}
+
+
+/* ===== AJUSTES PARA CELULAR ===== */
+
+@media (max-width: 420px) {
+
+  main {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  h1 {
+    font-size: 2.7rem;
+  }
+
+  .age {
+    font-size: 1.35rem;
+    padding: 6px 18px;
+  }
+
+  .grupo {
+    border-width: 5px;
+  }
+
+  .cumple {
+    width: 175px;
+    height: 175px;
+  }
+
+  .panel {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .txt .big {
+    font-size: 1.2rem;
+  }
+
+  .socks,
+  .regalo {
+    font-size: 1rem;
+  }
+
+  .regalo strong {
+    font-size: 1.2rem;
+  }
+
 }
